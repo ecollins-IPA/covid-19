@@ -29,11 +29,22 @@
     <div id="graph1"></div>
     
 <script>
-var plotly_data = {% graph1 %}
+Plotly.d3.json("https://ecollins.github.io/targeting/new_cases_by_country.json", function(plotly_data) {
 var config = {responsive: true}
-Plotly.newPlot('graph1', plotly_data.data, plotly_data.layout, config );
-
+Plotly.newPlot('graph1', plotly_data.data, plotly_data.layout, config ); })
 </script>
+
+Alright, but maybe it's more informative to look at new cases as a function of existing
+cases. I.e. How many new cases are being generated considering the number of contagious
+people out there?
+
+<div id="graph2"></div>
+<script>
+Plotly.d3.json("https://ecollins.github.io/targeting/new_vs_total.json", function(plotly_data) {
+var config = {responsive: true}
+Plotly.newPlot('graph2', plotly_data.data, plotly_data.layout, config ); })
+</script>
+
 
 </body>
 </html>
