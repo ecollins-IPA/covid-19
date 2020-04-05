@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--PLOTLY-->
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            width: 100%;
+        }
+		
+		#graph1{
+			height: 40%;
+			width: 60%;
+			position:relative;
+		}
+    </style>
+</head>
+<body class='with-3d-shadow with-transitions'>
+
+    <h2>Covid-19: The Basics</h2>
+    --Basic Facts and Stats-- <br>
+
+    <div id="graph1"></div>
+    
+<script>
+var plotly_data = {% graph1 %}
+var config = {responsive: true}
+Plotly.newPlot('graph1', plotly_data.data, plotly_data.layout, config );
+
+</script>
+
+</body>
+</html>
