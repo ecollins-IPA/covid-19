@@ -40,7 +40,7 @@ people out there?
 
 <div id="graph2"></div>
 <script>
-Plotly.d3.json("https://ecollins.github.io/targeting/new_vs_total.json", function(plotly_data) {
+Plotly.d3.json("./data/json/new_vs_total.json", function(plotly_data) {
 var config = {responsive: true}
 Plotly.newPlot('graph2', plotly_data.data, plotly_data.layout, config ); })
 </script>
