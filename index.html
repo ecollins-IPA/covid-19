@@ -55,9 +55,8 @@ Now let's watch that dynamic unfold over time.
 <script>
 Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/anim.json", function(plotly_data) {
 var config = {responsive: true}
-Plotly.newPlot('graph3', plotly_data.data, plotly_data.layout, config ); })
+Plotly.newPlot('graph3', plotly_data.data, plotly_data.layout).then(function() {Plotly.addFrames('graph3', plotly_data.frames);}); })
 </script>
-
 
 
 </body>
