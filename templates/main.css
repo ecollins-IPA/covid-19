@@ -1,0 +1,27 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+#graph1{
+	height: 40%;
+	width: 100%;
+	position:relative;
+}	
+#graph2{
+	height: 40%;
+	width: 100%;
+	position:relative;
+}
+#graph3{
+	height: 70%;
+	width: 100%;
+	position:relative;
+}
+#graph4{
+	height: 70%;
+	width: 100%;
+	position:relative;
+}
+
