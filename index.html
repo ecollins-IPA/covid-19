@@ -13,8 +13,12 @@
             height: 100%;
             width: 100%;
         }
-		
 		#graph1{
+			height: 40%;
+			width: 60%;
+			position:relative;
+		}	
+		#graph2{
 			height: 40%;
 			width: 60%;
 			position:relative;
@@ -29,7 +33,7 @@
     <div id="graph1"></div>
     
 <script>
-Plotly.d3.json("https://ecollins.github.io/targeting/new_cases_by_country.json", function(plotly_data) {
+Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/new_cases_by_country.json", function(plotly_data) {
 var config = {responsive: true}
 Plotly.newPlot('graph1', plotly_data.data, plotly_data.layout, config ); })
 </script>
@@ -38,12 +42,22 @@ Alright, but maybe it's more informative to look at new cases as a function of e
 cases. I.e. How many new cases are being generated considering the number of contagious
 people out there?
 
-<div id="graph1"></div>
+<div id="graph2"></div>
 <script>
-Plotly.d3.json("./data/json/new_vs_total.json", function(plotly_data) {
+Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/new_vs_total.json", function(plotly_data) {
 var config = {responsive: true}
-Plotly.newPlot('graph1', plotly_data.data, plotly_data.layout, config ); })
+Plotly.newPlot('graph2', plotly_data.data, plotly_data.layout, config ); })
 </script>
+
+Now let's watch that dynamic unfold over time.
+
+<div id="graph3"></div>
+<script>
+Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/new_vs_total.json", function(plotly_data) {
+var config = {responsive: true}
+Plotly.newPlot('graph3', plotly_data.data, plotly_data.layout, config ); })
+</script>
+
 
 
 </body>
