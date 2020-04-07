@@ -757,6 +757,7 @@ chart, a constant growth rate would be linear. Instead, every country is curving
 
 <div id="graph1"></div>
 
+<em>(By the way, click on the country names to modify the graph) </em><br><br>
     <script>
     Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/new_cases_by_country.json", function(plotly_data) {
     var config = {responsive: true}
@@ -767,9 +768,17 @@ As a different, perhaps more direct look at how countries are faring, we can ask
     many people seem to be getting infected <em>per infected person</em>. Comparing the
     total vs. the new number of confirmed cases, we can see a somewhat striking
     consistency across countries. This also offers a nice way to visualize when a country
-    or region is really making progress against the pandemic.
+    or region is really making progress against the pandemic. <br><br>
 
-    
+The full graph is below, but I find it more helpful if we can watch that dynamic unfold over time. Press <b>Start</b> or move the slider to watch how it's gone so far.<br>
+
+<div id="graph3"></div>
+
+    <script>
+    Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/new_vs_total_anim.json", function(plotly_data) {
+    var config = {responsive: true}
+    Plotly.newPlot('graph3', plotly_data.data, plotly_data.layout).then(function() {Plotly.addFrames('graph3', plotly_data.frames);}); })
+    </script>   
 
 <div id="graph2"></div>
 
@@ -781,15 +790,7 @@ As a different, perhaps more direct look at how countries are faring, we can ask
     Plotly.newPlot('graph2', plotly_data.data, plotly_data.layout, config ); })
     </script>
     
-    I find it more helpful if we can watch that dynamic unfold over time. Press <b>Start</b> or move the slider to watch how it's gone so far.
 
-<div id="graph3"></div>
-
-    <script>
-    Plotly.d3.json("https://ecollins-ipa.github.io/covid-19/data/json/new_vs_total_anim.json", function(plotly_data) {
-    var config = {responsive: true}
-    Plotly.newPlot('graph3', plotly_data.data, plotly_data.layout).then(function() {Plotly.addFrames('graph3', plotly_data.frames);}); })
-    </script>
 
 
 
